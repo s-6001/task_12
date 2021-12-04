@@ -10,7 +10,7 @@ namespace task_12
             {
                 bool mistake = false;   //есть ошибка при конвертации или радиус отрицательный?
                 double x = 0, y = 0;    //координаты точки
-                Console.Write("Введите радиус окружности R = ");
+                Console.Write("Введите радиус окружности r = ");
                 try
                 {
                     Circle.radius = Convert.ToDouble(Console.ReadLine());//попытка прочитать радиус 
@@ -23,7 +23,7 @@ namespace task_12
                 catch
                 {
                     mistake = true;
-                    Console.WriteLine("Не удалось распознать R.");
+                    Console.WriteLine("Не удалось распознать r.");
                 }
                 if (mistake == false)//если нет ошибки, то пытаемся распознать x
                 {
@@ -65,21 +65,21 @@ namespace task_12
             public static double radius; //радиус
             public static void DefineCircleLength(double radius)// метод вычисления длины окружности
             {
-                Console.WriteLine("Длина окружности с радиусом {1} равна {0}.", 2 * Math.PI * radius, radius);
+                Console.WriteLine("Длина окружности с радиусом r={1} равна {0}.", 2 * Math.PI * radius, radius);
             }
             public static void DefineCircleArea(double radius)// метод вычисления площади круга
             {
-                Console.WriteLine("Площадь круга с радиусом {1} равна {0}.", Math.PI * radius * radius, radius);
+                Console.WriteLine("Площадь круга с радиусом r={1} равна {0}.", Math.PI * radius * radius, radius);
             }
             public static void BelongToPoint(double radius, double x, double y)// метод определяет принадлежит ли точка кругу
             {
                 if (Math.Sqrt(x * x + y * y) <= radius)
                 {
-                    Console.WriteLine("Точка ({0},{1}) принадлежит кругу радиусом {2} с центром в точке (0,0).", x, y, radius);
+                    Console.WriteLine("Точка ({0},{1}) принадлежит кругу радиусом r={2} с центром в точке (0,0).", x, y, radius);
                 }
                 else
                 {
-                    Console.WriteLine("Точка ({0},{1}) лежит за пределами круга радиусом {2} с центром в точке (0,0).", x, y, radius);
+                    Console.WriteLine("Точка ({0},{1}) лежит за пределами круга радиусом r={2} с центром в точке (0,0).", x, y, radius);
                 }
             }
         }
